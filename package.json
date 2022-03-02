@@ -1,0 +1,33 @@
+{
+    "name": "playwright_jest_typescript",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --detectOpenHandles",
+        "test.watch": "jest --watchAll",
+        "test-play": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bizarre444/playwright_jest_typescript.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bizarre444/playwright_jest_typescript/issues"
+    },
+    "homepage": "https://github.com/bizarre444/playwright_jest_typescript#readme",
+    "devDependencies": {
+        "@playwright/test": "^1.19.2",
+        "@types/jest": "^27.4.1",
+        "jest": "^27.5.1",
+        "jest-junit": "^13.0.0",
+        "jest-junit-reporter": "^1.1.0",
+        "jest-playwright-preset": "^1.7.0",
+        "playwright": "^1.19.2",
+        "ts-jest": "^27.1.3",
+        "typescript": "^4.6.2"
+    }
+}

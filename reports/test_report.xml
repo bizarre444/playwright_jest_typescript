@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="18.98">
+  <testsuite name="Main page title" errors="0" failures="0" skipped="0" timestamp="2022-03-02T10:47:16" time="7.086" tests="1">
+    <properties>
+      <property name="best-tester" value="Olya Bizarre"/>
+    </properties>
+    <testcase classname="MAIN PAGE TITLE" name="Main page title Correct title" time="4.138">
+    </testcase>
+  </testsuite>
+  <testsuite name="Main page title" errors="0" failures="0" skipped="0" timestamp="2022-03-02T10:47:23" time="4.525" tests="1">
+    <properties>
+      <property name="best-tester" value="Olya Bizarre"/>
+    </properties>
+    <testcase classname="MAIN PAGE TITLE" name="Main page title Correct title" time="2.891">
+    </testcase>
+  </testsuite>
+  <testsuite name="Google Test Case" errors="0" failures="0" skipped="0" timestamp="2022-03-02T10:47:28" time="1.288" tests="1">
+    <properties>
+      <property name="best-tester" value="Olya Bizarre"/>
+    </properties>
+    <testcase classname="GOOGLE TEST CASE" name="Google Test Case returns succeessful search" time="1.03">
+    </testcase>
+  </testsuite>
+  <testsuite name="Google Test Case" errors="0" failures="0" skipped="0" timestamp="2022-03-02T10:47:29" time="1.864" tests="1">
+    <properties>
+      <property name="best-tester" value="Olya Bizarre"/>
+    </properties>
+    <testcase classname="GOOGLE TEST CASE" name="Google Test Case returns succeessful search" time="1.472">
+    </testcase>
+  </testsuite>
+</testsuites>
