@@ -11,6 +11,7 @@ export interface Login {
 }
 
 export interface LearningTabs {
+    url: string;
     name: string;
     tag_learning: string;
     text_learning: string;
