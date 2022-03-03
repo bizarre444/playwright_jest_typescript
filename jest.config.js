@@ -16,13 +16,11 @@ module.exports = {
     },
     reporters: [
         "default", [
-            "jest-junit",
+            "jest-html-reporters",
             {
-                classNameTemplate: (vars) => {
-                    return vars.classname.toUpperCase();
-                },
-                "outputDirectory": "reports",
-                "outputName": "test_report.xml"
+                "publicPath": "./reports/html-report",
+                "filename": "report.html",
+                "openReport": true
             }
         ]
     ]
