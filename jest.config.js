@@ -4,7 +4,7 @@ module.exports = {
     transform: {
         "^.+\\.(ts)$": "ts-jest",
     },
-    testTimeout: 20000,
+    testTimeout: 30000,
     testEnvironmentOptions: {
         "jest-playwright": {
             browsers: ["chromium"

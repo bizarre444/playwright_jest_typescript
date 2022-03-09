@@ -5,7 +5,7 @@ import educator from '../helper/ka_educator';
 import learning_tabs_worksheet from '../helper/learning_tabs/ka_learning_tabs_worksheet';
 import learning_tabs_games from '../helper/learning_tabs/ka_learning_tabs_games';
 import learning_tabs_video from '../helper/learning_tabs/ka_learning_tabs_video';
-import learning_tabs_lesson from '../helper/learning_tabs/ka_learning_tabs_video';
+import learning_tabs_lesson from '../helper/learning_tabs/ka_learning_tabs_lesson';
 
 describe(`Check page title`, () => {
     
@@ -44,10 +44,15 @@ describe(`Learning resources test`, () => {
         await page.goto(learning_tabs_worksheet.url);
     })
 
-    it('Correct loading tab', async () => {
+    it('Correct loading worksheet tab', async () => {
         const title = await page.innerText(learning_tabs_worksheet.title_learning_tag);
         let titleExp: string = learning_tabs_worksheet.text_learning;
         expect(title).toBe(titleExp);
+    });
+
+    it('Correct url worksheet tab', async () => {
+        let real_url: string = await page.url();
+        expect(real_url).toBe(learning_tabs_worksheet.url);
     });
 
     it('Correct loading games tab', async () => {
@@ -57,6 +62,15 @@ describe(`Learning resources test`, () => {
             path: './screenshots/' + learning_tabs_games.name + '.png',
             fullPage: true
         });
+        //check title
+        const title = await page.innerText(learning_tabs_games.title_learning_tag);
+        let titleExp: string = learning_tabs_games.text_learning;
+        expect(title).toBe(titleExp);
+    });
+
+    it('Correct url games tab', async () => {
+        let real_url: string = await page.url();
+        expect(real_url).toBe(learning_tabs_games.url);
     });
 
     it('Correct loading video tab', async () => {
@@ -67,19 +81,36 @@ describe(`Learning resources test`, () => {
             path: './screenshots/' + learning_tabs_video.name + '.png',
             fullPage: true
         });
+        //check title
+        const title = await page.innerText(learning_tabs_video.title_learning_tag);
+        let titleExp: string = learning_tabs_video.text_learning;
+        expect(title).toBe(titleExp);
+    });
+
+    it('Correct url videos tab', async () => {
+        let real_url: string = await page.url();
+        expect(real_url).toBe(learning_tabs_video.url);
     });
 
     it('Correct loading lesson tab', async () => {
-        await page.click('text=' + learning_tabs_lesson.tag_learning);
+        await page.click(learning_tabs_lesson.tag_learning);
+        await page.goto(learning_tabs_lesson.url);
         await page.waitForTimeout(5000);
         await page.waitForSelector(learning_tabs_lesson.title_learning_tag);
         await page.screenshot({
             path: './screenshots/' + learning_tabs_lesson.name + '.png',
             fullPage: true
         });
+        //check title
+        const title = await page.innerText(learning_tabs_lesson.title_learning_tag);
+        let titleExp: string = learning_tabs_lesson.text_learning;
+        expect(title).toBe(titleExp);
     });
 
-    //TODO check URL
+    it('Correct url lessons tab', async () => {
+        let real_url: string = await page.url();
+        expect(real_url).toBe(learning_tabs_lesson.url);
+    });
     
 })
 
