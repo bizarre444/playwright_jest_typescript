@@ -39,4 +39,6 @@ describe(`Registration test`, () => {
             fullPage: true
         })
     })
+
+    //TODO chess flow
 })
