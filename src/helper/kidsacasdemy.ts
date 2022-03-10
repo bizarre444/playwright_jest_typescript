@@ -7,7 +7,14 @@ export interface Page {
 
 export interface Login {
     email: string;
-    password: string
+    password: string;
+    text: string;
+    title_tag: string;
+    email_input: string;
+    password_input: string;
+    error: string;
+    button: string;
+    success_url: string
 }
 
 export interface LearningTabs {

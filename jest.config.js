@@ -8,7 +8,7 @@ module.exports = {
     testEnvironmentOptions: {
         "jest-playwright": {
             browsers: ["chromium"
-                //, "firefox"
+                //, "firefox", "edge"
             ],
             launchOptions: {
                 headless: false,
