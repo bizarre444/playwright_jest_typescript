@@ -24,7 +24,6 @@ describe(`Test Login-logout part`, () => {
         await page.click(login.button);
         await page.waitForTimeout(5000);
         let message = await page.innerText(login.error);
-        console.log(message);
         expect(message).toEqual('Email or password is invalid');
     })
 
@@ -39,7 +38,6 @@ describe(`Test Login-logout part`, () => {
         await page.click(login.button);
         await page.waitForTimeout(5000);
         let url = await page.url();
-        console.log(url);
         expect(url).toEqual(login.success_url);
     })
 
