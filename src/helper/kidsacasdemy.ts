@@ -24,3 +24,12 @@ export interface LearningTabs {
     text_learning: string;
     title_learning_tag: string
 }
+
+export interface Registration {
+    button_signup: string;
+    start_btn: string;
+    grade: string;
+    subject: string;
+    next_btn: string;
+    learning_btn: string
+}
