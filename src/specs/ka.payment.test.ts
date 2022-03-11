@@ -1,59 +1,67 @@
+import payment from '../helper/ka_payment';
+import quarterly from '../helper/plans/quarterly';
+import yearly from '../helper/plans/yearly';
+
 describe(`Payment test`, () => {
 
     it('Check correct data without trial and coupon', async () => {
-        await page.goto('https://www.ka-stage.ml/subscription-plans/');
+        await page.goto(payment.url);
         //choose second plan(without trial)
-        await page.click('//*[@id="1-step-sample"]/ul/li[2]/div');
+        await page.click(payment.second_plan);
         //await page.waitForTimeout(2000);
         //take screenshot with Quaterly plan
         await page.screenshot({
-            path: './screenshots/quaterly.png',
+            path: './screenshots/' + quarterly.name + '.png',
             fullPage: true
         })
         //click Submit button
-        await page.click('.subscription-plans-sample__controls-btn');
+        await page.click(payment.submit_btn);
         //await page.waitForTimeout(2000);
-        await page.waitForSelector('.subscription-plans-sample__payment-container');
+        await page.waitForSelector(payment.container);
         //take screenshot payment step
         await page.screenshot({
             path: './screenshots/payment.png',
             fullPage: true
         });
         //check period
-        let period: string = await page.innerText('//*[@id="2-step-sample"]//*[@data-selector = "plan-period-value"]');
+        let period: string = await page.innerText(payment.period);
         //console.log(period);
-        expect(period).toEqual('Quarterly');
+        expect(period).toEqual(quarterly.name);
         //check price
-        let price: string = await page.innerText('//*[@id="2-step-sample"]//*[@data-selector = "plan-full-price-value"]');
+        let price: string = await page.innerText(payment.price);
         //console.log(price);
-        expect(price).toEqual('$19.99');
+        expect(price).toEqual(quarterly.price);
     })
 
     it('Check data with trial', async () => {
         //back to subs-plan page
-        await page.click('//*[@id="2-step-sample"]//*[@data-selector="back-to-prev-section-btn"]');
+        await page.click(payment.back_btn);
         await page.waitForTimeout(2000);
         //choose first plan
-        await page.click('//*[@id="1-step-sample"]/ul/li[1]/div');
+        await page.click(payment.first_plan);
         //click Submit button
-        await page.click('.subscription-plans-sample__controls-btn');
+        await page.click(payment.submit_btn);
         //wait payment page
-        await page.waitForSelector('.subscription-plans-sample__payment-container');
+        await page.waitForSelector(payment.container);
         //check period
-        let period: string = await page.innerText('//*[@id="2-step-sample"]//*[@data-selector="plan-period-value"]');
+        let period: string = await page.innerText(payment.period);
         //console.log(period);
-        expect(period).toEqual('Yearly');
+        expect(period).toEqual(yearly.name);
         //check price
-        let price: string = await page.innerText('//*[@id="2-step-sample"]//*[@data-selector="plan-full-price-value"]');
+        let price: string = await page.innerText(payment.price);
         //console.log(price);
-        expect(price).toEqual('$64.99');
+        expect(price).toEqual(yearly.price);
         //check trial duration
-        let trial: string = await page.innerText('//*[@id="2-step-sample"]//*[@data-selector="plan-trial-period-value"]');
+        let trial: string = await page.innerText(payment.trial);
         //console.log(trial);
-        expect(trial).toEqual('3 days');
+        expect(trial).toEqual(yearly.trial);
         //check total
-        let total: string = await page.innerText('//*[@id="2-step-sample"]//*[@data-selector="plan-total-price-value"]');
+        let total: string = await page.innerText(payment.total);
         //console.log(total);
-        expect(total).toEqual('$0.00');
+        expect(total).toEqual(yearly.total);
+    })
+
+    afterAll(async () => {
+        await page.close();
     })
 })

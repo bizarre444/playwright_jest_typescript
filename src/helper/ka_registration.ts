@@ -1,13 +1,13 @@
 import { Registration } from './kidsacasdemy';
 
 let registration: Registration = {
-    button_signup: 'text=Sign up',
-    start_btn: 'body > div.content > div > div.container > div.sign-up-page__container._parent > div.sign-up-page__right > div.sign-up-page__right-top > div.sign-up-page__parent-next-btn > button',
-    grade: 'body > div.content > div > div.kid-profile-create-page__content > div.kid-profile-create-page__step._grades > div > div.kid-profile-create-page__grades > div:nth-child(2)',
-    subject: 'body > div.content > div > div.kid-profile-create-page__content > div.kid-profile-create-page__step._grades > div > div.kid-profile-create-page__subjects-wrapper > div.kid-profile-create-page__subjects > div:nth-child(4) > label',
-    next_btn: 'body > div.content > div > div.kid-profile-create-page__content > div.kid-profile-create-page__step._grades > div > div.kid-profile-create-page__btns > button',
-    learning_btn: 'body > div.content > div > div.kid-profile-create-page__content > div.kid-profile-create-page__step._kid-profile-details > div.kid-profile-create-page__bottom > div > div.kid-profile-create-page__btns._kid-card > button'
-
+    button_signup: '//*[@id="bs-example-navbar-collapse-1"]//*[@data-locator="sign-up-modal-open-button"]',
+    start_btn: '//*[@data-selector="sign-up-parent-btn"]',
+    grade: '//*[@data-value="Grade 1"]',
+    subject: '//*[@data-selector="subject-checkbox-title"]',
+    next_btn: 'button.kid-profile-create-page__next-btn',
+    learning_btn: 'text="Start learning!"',
+    check_box: 'https://www.ka-stage.ml/sign-up/?placement=header&type=parent'
 }
 
 export default registration;

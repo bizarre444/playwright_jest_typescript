@@ -31,5 +31,26 @@ export interface Registration {
     grade: string;
     subject: string;
     next_btn: string;
-    learning_btn: string
+    learning_btn: string;
+    check_box: string
+}
+
+export interface Payment {
+    url: string;
+    first_plan: string;
+    second_plan: string;
+    submit_btn: string;
+    container: string;
+    period: string;
+    price: string;
+    back_btn: string;
+    trial: string;
+    total: string
+}
+
+export interface Plan {
+    name: string;
+    price: string;
+    trial: string;
+    total: string
 }
