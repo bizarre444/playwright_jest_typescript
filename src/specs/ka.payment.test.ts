@@ -32,6 +32,10 @@ describe(`Payment test`, () => {
         let price: string = await page.innerText(payment.price);
         //console.log(price);
         expect(price).toEqual(quarterly.price);
+        //check total
+        let total: string = await page.innerText(payment.total);
+        //console.log(total);
+        expect(total).toEqual(quarterly.total);
     })
 
     it('Check data with trial', async () => {
