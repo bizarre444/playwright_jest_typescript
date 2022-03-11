@@ -45,7 +45,8 @@ export interface Payment {
     price: string;
     back_btn: string;
     trial: string;
-    total: string
+    total: string;
+    discount: string
 }
 
 export interface Plan {
@@ -53,4 +54,13 @@ export interface Plan {
     price: string;
     trial: string;
     total: string
+}
+
+export interface Coupon {
+    block_coupon: string;
+    input_coupon: string;
+    message_coupon: string;
+    name: string;
+    discount: string;
+    trial: string
 }

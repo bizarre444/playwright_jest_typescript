@@ -10,7 +10,8 @@ let payment: Payment = {
     price: '//*[@id="2-step-sample"]//*[@data-selector = "plan-full-price-value"]',
     back_btn: '//*[@id="2-step-sample"]//*[@data-selector="back-to-prev-section-btn"]',
     trial: '//*[@id="2-step-sample"]//*[@data-selector="plan-trial-period-value"]',
-    total: '//*[@id="2-step-sample"]//*[@data-selector="plan-total-price-value"]'
+    total: '//*[@id="2-step-sample"]//*[@data-selector="plan-total-price-value"]',
+    discount: '//*[@id="2-step-sample"]//*[@data-selector="plan-discount-value"]'
 }
 
 
