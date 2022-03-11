@@ -7,9 +7,7 @@ module.exports = {
     testTimeout: 70000,
     testEnvironmentOptions: {
         "jest-playwright": {
-            browsers: ["chromium"
-                //, "firefox", "edge"
-            ],
+            browsers: ["chromium", "firefox"],
             launchOptions: {
                 headless: false,
                 //slowMo: 600,

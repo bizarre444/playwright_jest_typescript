@@ -2,6 +2,7 @@ import main from '../helper/ka_main';
 import parent from '../helper/ka_parent';
 import learning from '../helper/ka_learning';
 import educator from '../helper/ka_educator';
+import blog from '../helper/ka_blog';
 import learning_tabs_worksheet from '../helper/learning_tabs/ka_learning_tabs_worksheet';
 import learning_tabs_games from '../helper/learning_tabs/ka_learning_tabs_games';
 import learning_tabs_video from '../helper/learning_tabs/ka_learning_tabs_video';
@@ -36,6 +37,13 @@ describe(`Check page title`, () => {
         let titleExp: string = educator.title;
         expect(title).toBe(titleExp);
     });
+
+    it('Correct title on Storytime page', async () => {
+        await page.goto(blog.url);
+        const title = await page.innerText(blog.title_tag);
+        let titleExp: string = blog.title;
+        expect(title).toBe(titleExp);
+    })
 })
 
 describe(`Learning resources test`, () => {
