@@ -9,7 +9,7 @@ describe(`Registration test`, () => {
         await page.waitForTimeout(2000);
         //check for Parent check-box
         let parent_url=  await page.url();
-        expect(parent_url).toEqual(registration.check_box);
+        expect(parent_url).toContain(registration.check_box);
         await page.click(registration.start_btn);
         //click grade
         await page.click(registration.grade);

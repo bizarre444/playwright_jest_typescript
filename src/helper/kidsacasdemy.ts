@@ -9,6 +9,7 @@ export interface Login {
     email: string;
     password: string;
     text: string;
+    login: string;
     title_tag: string;
     email_input: string;
     password_input: string;

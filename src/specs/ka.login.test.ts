@@ -5,7 +5,7 @@ describe(`Test Login-logout part`, () => {
 
     it('Login from Main page - popup is visible', async ()=> {
         await page.goto(main.url);
-        await page.click('text=' + login.text);
+        await page.click(login.login);
         await page.waitForTimeout(1000);
         const title = await page.innerText(login.title_tag);
         expect(title).toContain(login.text);
@@ -29,7 +29,7 @@ describe(`Test Login-logout part`, () => {
 
     it('Login with correct creds', async () => {
         await page.goto(main.url);
-        await page.click('text=' + login.text);
+        await page.click(login.login);
         await page.waitForTimeout(1000);
         await page.click(login.email_input);
         await page.type(login.email_input, login.email);
