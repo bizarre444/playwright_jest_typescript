@@ -7,12 +7,12 @@ export class BasePage {
         this.page = page;
     }
 
-    async open(url: string, path?:  string) {
-        await this.page.goto(url + path);
+    async open(url: string) {
+        await this.page.goto(url);
     }
 
-    async getTitle(tag: string): Promise<string> {
-        return await this.page.innerText(tag);
+    async getTitle(tag: string) {
+        return await this.page.locator(tag).innerText();
     }
 
     async getUrl() {
