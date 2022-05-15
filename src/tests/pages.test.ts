@@ -33,7 +33,7 @@ test.describe.parallel('Check page url and title', () => {
         const siteUrl = await homepage.getUrl();
         expect(siteUrl).toBe(url);
         //check title
-        const title = await homepage.getTitle(mainPage.title_tag);
+        const title = await homepage.getInnerText(mainPage.title_tag);
         expect(title).toBe(mainPage.title);
     });
 
@@ -45,7 +45,7 @@ test.describe.parallel('Check page url and title', () => {
         const siteUrl = await parentpage.getUrl();
         expect(siteUrl).toBe(url + parentPage.path);
         //check title
-        const title = await parentpage.getTitle(parentPage.title_tag);
+        const title = await parentpage.getInnerText(parentPage.title_tag);
         expect(title).toBe(parentPage.title);
     });
 
@@ -57,7 +57,7 @@ test.describe.parallel('Check page url and title', () => {
         const siteUrl = await teacherpage.getUrl();
         expect(siteUrl).toBe(url + teachersPage.path);
         //check title
-        const title = await teacherpage.getTitle(teachersPage.title_tag);
+        const title = await teacherpage.getInnerText(teachersPage.title_tag);
         expect(title).toBe(teachersPage.title);
     });
 
@@ -70,7 +70,7 @@ test.describe.parallel('Check page url and title', () => {
         const siteUrl = await learningpage.getUrl();
         expect(siteUrl).toBe(url + learningPage.path);
         //check title
-        const title = await learningpage.getTitle(learningPage.title_tag);
+        const title = await learningpage.getInnerText(learningPage.title_tag);
         expect(title).toBe(learningPage.title);
     });
 
@@ -83,7 +83,7 @@ test.describe.parallel('Check page url and title', () => {
         const siteUrl = await blogpage.getUrl();
         expect(siteUrl).toBe(url + blogPage.path);
         //check title
-        const title = await blogpage.getTitle(blogPage.title_tag);
+        const title = await blogpage.getInnerText(blogPage.title_tag);
         expect(title).toBe(blogPage.title);
     });
 
@@ -98,14 +98,13 @@ test.describe('Learning tabs', () => {
             //check url
             const siteUrl = await learningpage.getUrl();
             expect(siteUrl).toBe(url + learningPage.worksheet_tab.path);
-            
         });
         await test.step('Games tab', async () => {
             //click to games tab
             await learningpage.clickTab(learningPage.game_tab.tag);
             await learningpage.waitSelector(learningPage.game_tab.title_tag);
             //check title
-            const title = await learningpage.getTitle(learningPage.game_tab.title_tag);
+            const title = await learningpage.getInnerText(learningPage.game_tab.title_tag);
             expect(title).toBe(learningPage.game_tab.text);
         });
         await test.step('Video tab', async () => {
@@ -113,7 +112,7 @@ test.describe('Learning tabs', () => {
             await learningpage.clickTab(learningPage.video_tab.tag);
             await learningpage.waitSelector(learningPage.video_tab.title_tag);
             //check title
-            const title = await learningpage.getTitle(learningPage.video_tab.title_tag);
+            const title = await learningpage.getInnerText(learningPage.video_tab.title_tag);
             expect(title).toBe(learningPage.video_tab.text);
         });
         // await test.step('Lessons tab', async () => {

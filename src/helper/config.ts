@@ -56,6 +56,10 @@ module.exports = {
         login: {
             email: "qa.parent2021@gmail.com",
             password: "123456QA",
+            modal: '#logInModal > div > div > div.modal-header.text-center.custom-modal__header > div',
+            successUrl: 'https://www.ka-stage.ml/account-settings/#report',
+            errorTag: '#family > form > div.alert.alert-danger.error-alert',
+            message: 'Email or password is invalid'
         }
     }
 }

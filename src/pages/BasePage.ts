@@ -17,7 +17,7 @@ export class BasePage {
         }
     }
 
-    async getTitle(tag: string) {
+    async getInnerText(tag: string) {
         return await this.page.locator(tag).innerText();
     }
 
