@@ -35,10 +35,11 @@ export class BasePage {
             fullPage: true
         })
     }
-    async headerClick(button: string) {
+    async clickWait(button: string) {
         await page.click(button);
         await this.page.waitForTimeout(1000);
     }
 
+    async 
    
 }

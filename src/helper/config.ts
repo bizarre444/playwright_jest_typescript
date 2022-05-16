@@ -1,5 +1,6 @@
 module.exports = {
     url: 'https://www.ka-stage.ml/',
+    subUrl: 'subscription-plans/',
     selectors: {
         parentPage: {
             path: "parents/",
@@ -59,7 +60,15 @@ module.exports = {
             modal: '#logInModal > div > div > div.modal-header.text-center.custom-modal__header > div',
             successUrl: 'https://www.ka-stage.ml/account-settings/#report',
             errorTag: '#family > form > div.alert.alert-danger.error-alert',
-            message: 'Email or password is invalid'
+            message: 'Email or password is invalid',
+            success: '.page-title'
+        },
+        payment: {
+            period: '//*[@id="2-step-sample"]//*[@data-selector = "plan-period-value"]',
+            price: '//*[@id="2-step-sample"]//*[@data-selector = "plan-full-price-value"]',
+            trial: '//*[@id="2-step-sample"]//*[@data-selector="plan-trial-period-value"]',
+            discount: '//*[@id="2-step-sample"]//*[@data-selector="plan-discount-value"]',
+            total: '//*[@id="2-step-sample"]//*[@data-selector="plan-total-price-value"]'
         }
     }
 }

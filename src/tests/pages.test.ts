@@ -17,14 +17,14 @@ test.afterEach(async ({ page }, testInfo) => {
 });
 
 test.beforeAll(async () => {
-    console.log('Before tests');
+    console.log('Before page tests');
 });
   
 test.afterAll(async () => {
-    console.log('After tests');
+    console.log('After page tests');
 });
 
-test.describe.parallel('Check page url and title', () => {
+test.describe('Check page url and title', () => {
     test('Main page test', async( {page} ) => {
         const homepage = new BasePage(page);
 
@@ -114,16 +114,6 @@ test.describe('Learning tabs', () => {
             //check title
             const title = await learningpage.getInnerText(learningPage.video_tab.title_tag);
             expect(title).toBe(learningPage.video_tab.text);
-        });
-        // await test.step('Lessons tab', async () => {
-        //     //click to lessons tab
-        //     await learningpage.clickTab(learningPage.lesson_tab.tag);
-        //     await page.waitForTimeout(5000);
-        //     await learningpage.waitSelector(learningPage.lesson_tab.title_tag);
-        //     //check title
-        //     const title = await learningpage.getTitle(learningPage.lesson_tab.title_tag);
-        //     expect(title).toBe(learningPage.lesson_tab.text);
-        // })
-        
+        });        
     })
 })
