@@ -2,17 +2,23 @@ import { Locator, Page } from "playwright";
 
 export class BasePage {
     readonly page: Page;
+    
 
     constructor(page: Page) {
         this.page = page;
     }
 
-    async open(url: string, path?:  string) {
-        await this.page.goto(url + path);
+    async open(url: string, path?: string) {
+        if(typeof path == 'undefined') {
+            await this.page.goto(url);
+        } 
+        else {
+            await this.page.goto(url + path);
+        }
     }
 
-    async getTitle(tag: string): Promise<string> {
-        return await this.page.innerText(tag);
+    async getInnerText(tag: string) {
+        return await this.page.locator(tag).innerText();
     }
 
     async getUrl() {
@@ -29,4 +35,11 @@ export class BasePage {
             fullPage: true
         })
     }
+    async clickWait(button: string) {
+        await page.click(button);
+        await this.page.waitForTimeout(1000);
+    }
+
+    async 
+   
 }

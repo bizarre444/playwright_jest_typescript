@@ -4,9 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "jest --detectOpenHandles",
+        "test": "playwright test",
+        "test-jest": "jest --detectOpenHandles",
         "test.watch": "jest --watchAll",
-        "test-play": ""
+        "test-report": "playwright test --headed --reporter=html"
     },
     "repository": {
         "type": "git",
