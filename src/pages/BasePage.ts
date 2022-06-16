@@ -40,6 +40,6 @@ export class BasePage {
         await this.page.waitForTimeout(1000);
     }
 
-    async 
+
    
 }
