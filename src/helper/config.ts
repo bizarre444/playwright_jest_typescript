@@ -51,7 +51,7 @@ module.exports = {
             title_tag: ".page-title__text"
         },
         mainPage: {
-            title: "With Kids Academy, All Eyes Are Glued on Learning!",
+            title: "Learning Website for Kids Pre-K to 3rd Grade",
             title_tag: ".home-main-section__title"
         },
         login: {
