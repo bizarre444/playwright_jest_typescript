@@ -14,7 +14,7 @@ class APIUtils {
         const loginResponseJson = await loginResponse.json();
         //const userId = loginResponseJson.user.id;
         //console.log(loginResponseJson);
-
+        await this.apiContext.storageState({ path: 'state.json'});
         return loginResponseJson;
     }
 }
