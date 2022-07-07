@@ -2,7 +2,6 @@ import { Locator, Page } from "playwright";
 
 export class BasePage {
     readonly page: Page;
-    
 
     constructor(page: Page) {
         this.page = page;
@@ -31,7 +30,8 @@ export class BasePage {
 
     async takeScreenshoot() {
         await this.page.screenshot({
-            path: './screenshots/' + `(Math.floor(Math.random()) * 1000` + '.png',
+            path: './screenshots/123.png',
+            //edit path!!!
             fullPage: true
         })
     }
@@ -40,6 +40,8 @@ export class BasePage {
         await this.page.waitForTimeout(1000);
     }
 
-
+    async pause() {
+        await this.page.pause();
+    }
    
 }

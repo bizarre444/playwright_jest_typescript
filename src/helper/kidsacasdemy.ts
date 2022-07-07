@@ -1,3 +1,5 @@
+import { BrowserContext } from "@playwright/test";
+
 export interface Page {
     url: string;
     title: string;
@@ -37,6 +39,7 @@ export interface Registration {
 }
 
 export interface Payment {
+    page: Page;
     url: string;
     first_plan: string;
     second_plan: string;
