@@ -91,7 +91,7 @@ test.describe('Check page url and title', () => {
 });
 
 test.describe('Learning tabs', () => {
-    test('Check correct change tabs', async({page}) => {
+    test.only('Check correct change tabs', async({page}) => {
         const learningpage = new LearningPage(page);
         await test.step('Check correct worksheet tab', async () => {
             await learningpage.open(url, learningPage.worksheet_tab.path);
@@ -101,19 +101,32 @@ test.describe('Learning tabs', () => {
         });
         await test.step('Games tab', async () => {
             //click to games tab
-            await learningpage.clickTab(learningPage.game_tab.tag);
-            await learningpage.waitSelector(learningPage.game_tab.title_tag);
+            await learningpage.clickTabGame();
             //check title
             const title = await learningpage.getInnerText(learningPage.game_tab.title_tag);
             expect(title).toBe(learningPage.game_tab.text);
         });
         await test.step('Video tab', async () => {
             //click to videos tab
-            await learningpage.clickTab(learningPage.video_tab.tag);
-            await learningpage.waitSelector(learningPage.video_tab.title_tag);
+            await learningpage.clickTabVideo();
             //check title
             const title = await learningpage.getInnerText(learningPage.video_tab.title_tag);
             expect(title).toBe(learningPage.video_tab.text);
         });        
+        await test.step('Worksheet tab', async () => {
+            //click to worksheet tab
+            await learningpage.clickTabWorksheet();
+            //check title
+            const title = await learningpage.getInnerText(learningPage.worksheet_tab.title_tag);
+            expect(title).toBe(learningPage.worksheet_tab.text);
+        });    
+        await test.step('Lesson tab', async () => {
+            //click to lesson tab
+            await learningpage.clickTabWorksheet();
+            //check title
+            const title = await learningpage.getInnerText(learningPage.lesson_tab.title_tag);
+            expect(title).toBe(learningPage.lesson_tab.text);
+            //console.log(title);
+        });  
     })
 })
