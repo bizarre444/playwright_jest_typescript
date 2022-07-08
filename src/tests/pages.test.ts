@@ -122,7 +122,7 @@ test.describe('Learning tabs', () => {
         });    
         await test.step('Lesson tab', async () => {
             //click to lesson tab
-            await learningpage.clickTabWorksheet();
+            await learningpage.clickTabLesson();
             //check title
             const title = await learningpage.getInnerText(learningPage.lesson_tab.title_tag);
             expect(title).toBe(learningPage.lesson_tab.text);
