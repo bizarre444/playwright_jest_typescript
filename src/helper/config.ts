@@ -19,28 +19,24 @@ module.exports = {
             worksheet_tab: {
                 path: "free-preschool-kindergarten-worksheets/",
                 name: "worksheets",
-                tag: "text='Printable worksheets'",
                 text: "Free & Fun Worksheets for Kids",
                 title_tag: ".learning-resources__primary-title"
             },
             game_tab: {
                 path: "learning-games/",
                 name: "games",
-                tag: "text='Learning games'",
                 text: "Learning Games for Kids",
                 title_tag: ".learning-resources__primary-title"
             },
             video_tab: {
                 url: "learning-videos/",
                 name: "video",
-                tag: "text='Educational videos'",
                 text: "Free Learning Videos for Kids",
                 title_tag: ".learning-resources__primary-title"
             },
             lesson_tab: {
                 url: "lessons/",
                 name: "lesson",
-                tag: "body > div.content > div.learning-resources > div:nth-child(1) > div > div > div.learning-resources-tabs__wrapper > ul > li.learning-resources-tabs__item._active > a",
                 text: "Free Online Learning Lessons for Kids",
                 title_tag: '[data-selector="lessons-title-default"]'
             }

@@ -33,5 +33,5 @@ test('Main page test', async( {page} ) => {
     const title = await homepage.getInnerText(mainPage.title_tag);
     expect(title).toBe(mainPage.title);
     await homepage.takeScreenshoot();
-    //await homepage.pause();
+    await homepage.pause();
 });
