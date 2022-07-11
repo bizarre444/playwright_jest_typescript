@@ -14,7 +14,7 @@ export class PaymentPage extends BasePage {
     constructor(page: Page) {
         super(page);
         this.paymentpage = page;
-        this.firstPlan = page.locator('//*[@id="1-step-sample"]/ul/li[1]/div');
+        this.firstPlan = page.locator('[data-selector="subscription-plan-input-wrapper"]').first();
         this.secondPlan = page.locator('//*[@id="1-step-sample"]/ul/li[2]/div');
         this.submitBtn = page.locator('.subscription-plans-sample__controls-btn');
         this.paymentContainer = page.locator('.subscription-plans-sample__payment-container');

@@ -21,7 +21,7 @@ test.beforeAll(async ({browser}) => {
     webContext = await browser.newContext({ storageState: './state/state.json'});
 });
 
-test('Main page test', async( {page} ) => {
+test('Main page test', async() => {
     let homepage = new BasePage(await webContext.newPage());
 
     await homepage.open(url);
@@ -33,5 +33,5 @@ test('Main page test', async( {page} ) => {
     const title = await homepage.getInnerText(mainPage.title_tag);
     expect(title).toBe(mainPage.title);
     await homepage.takeScreenshoot();
-    await homepage.pause();
+    //await homepage.pause();
 });

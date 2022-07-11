@@ -91,7 +91,7 @@ test.describe('Check page url and title', () => {
 });
 
 test.describe('Learning tabs', () => {
-    test.only('Check correct change tabs', async({page}) => {
+    test('Check correct change tabs', async({page}) => {
         const learningpage = new LearningPage(page);
         await test.step('Check correct worksheet tab', async () => {
             await learningpage.open(url, learningPage.worksheet_tab.path);
@@ -126,7 +126,6 @@ test.describe('Learning tabs', () => {
             //check title
             const title = await learningpage.getInnerText(learningPage.lesson_tab.title_tag);
             expect(title).toBe(learningPage.lesson_tab.text);
-            //console.log(title);
         });  
     })
 })
