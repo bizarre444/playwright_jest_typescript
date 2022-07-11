@@ -31,9 +31,6 @@ test.afterAll(async () => {
 test.describe('Payment tests', () => {
     test('Check correct data without trial and coupon', async({page}) => {
         test.slow();
-        //const homepage = new PaymentPage(page);
-
-        //await homepage.open(url + subUrl);
         await homepage.chooseSecondPlan();
         //check period
         const period = await homepage.getInnerText(payment.period);
@@ -49,9 +46,6 @@ test.describe('Payment tests', () => {
 
     test('Check correct data with trial', async({page}) => {
         test.slow();
-        // const homepage = new PaymentPage(page);
-
-        // await homepage.open(url + subUrl);
         await homepage.chooseFirstPlan();
         //check period
         const period = await homepage.getInnerText(payment.period);
@@ -69,9 +63,6 @@ test.describe('Payment tests', () => {
 
     test('Check correct data with coupon', async({page}) => {
         test.slow();
-        // const homepage = new PaymentPage(page);
-
-        // await homepage.open(url + subUrl);
         await homepage.chooseCoupon(coupon_free.name);
         await homepage.chooseFirstPlan();
         //check period
