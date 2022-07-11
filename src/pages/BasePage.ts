@@ -30,8 +30,7 @@ export class BasePage {
 
     async takeScreenshoot() {
         await this.page.screenshot({
-            path: './screenshots/123.png',
-            //edit path!!!
+            path: './screenshots/' + `(Math.floor(Math.random()) * 1000` + '.png',
             fullPage: true
         })
     }

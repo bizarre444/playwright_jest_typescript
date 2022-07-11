@@ -21,7 +21,7 @@ test.beforeAll(async ({browser}) => {
     webContext = await browser.newContext({ storageState: './state/state.json'});
 });
 
-test('Main page test', async( {page} ) => {
+test('Main page test', async() => {
     let homepage = new BasePage(await webContext.newPage());
 
     await homepage.open(url);
