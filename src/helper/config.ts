@@ -50,6 +50,9 @@ module.exports = {
             title: "Learning Website for Kids Pre-K to 3rd Grade",
             title_tag: ".home-main-section__title"
         },
+        chessPage: {
+            path: "chess-course/"
+        },
         login: {
             email: "qa.parent2021@gmail.com",
             password: "123456QA",

@@ -1,8 +1,10 @@
 import {test, expect} from "@playwright/test";
-import { BasePage } from "../pages/BasePage";
 import { RegistrationHeader } from "../pages/RegistrationHeader";
+import { RegistrationChess } from "../pages/RegistrationChess";
 const url = require("../helper/config").url;
 const subUrl = require("../helper/config").subUrl;
+const path = require("../helper/config").selectors.chessPage.path;
+let homepage: any;
 
 test.afterEach(async ({ page }, testInfo) => {
     console.log(`Finished ${testInfo.title} with status ${testInfo.status}`);
@@ -11,8 +13,11 @@ test.afterEach(async ({ page }, testInfo) => {
       console.log(`Did not run as expected, ended up at ${page.url()}`);
 });
 
-test.beforeAll(async () => {
+test.beforeAll(async ({browser}) => {
     console.log('Before registration tests');
+    // const page = await browser.newPage();
+    // homepage = new RegistrationHeader(page);
+    // await page.goto(url);
 });
   
 test.afterAll(async () => {
@@ -22,7 +27,7 @@ test.afterAll(async () => {
 test.describe('Registration test', () => {
     test('Reg flow from header', async({page}) => {
         test.slow();
-        const homepage = new RegistrationHeader(page);
+        homepage = new RegistrationHeader(page);
 
         await homepage.open(url);
         await homepage.clickSignUp();
@@ -30,5 +35,15 @@ test.describe('Registration test', () => {
         //check url
         const regUrl = await homepage.getUrl();
         expect(regUrl).toContain(subUrl);
+    })
+
+    test.only('Registration from Chess course', async({ page }) => {
+        homepage = new RegistrationChess(page);
+        console.log(path)
+        await homepage.open(url + path);
+        await homepage.chessFlowFirst();
+        const textName = await homepage.getInnerText(".sign-up-chess__name");
+        console.log(textName);
+        expect(textName).toContain('name');
     })
 })
