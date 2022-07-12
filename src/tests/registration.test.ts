@@ -51,5 +51,11 @@ test.describe('Registration test', () => {
         //console.log(titleStepOne);
         //check my child's name is here
         expect(titleStepOne).toContain("Kira");
+
+        //need fix
+        await homepage.chessFlowThird();
+        const successTitle = await homepage.getInnerText('[data-selector="chess-last-step-good-text"]');
+        console.log(successTitle);
+        expect(successTitle).toContain("Kira");
     })
 })
