@@ -39,11 +39,17 @@ test.describe('Registration test', () => {
 
     test.only('Registration from Chess course', async({ page }) => {
         homepage = new RegistrationChess(page);
-        console.log(path)
+        //console.log(path)
         await homepage.open(url + path);
         await homepage.chessFlowFirst();
         const textName = await homepage.getInnerText(".sign-up-chess__name");
-        console.log(textName);
+        //console.log(textName);
         expect(textName).toContain('name');
+
+        await homepage.chessFlowSecond();
+        const titleStepOne = await homepage.getInnerText('[data-selector="chess-level-question-step-1"]');
+        //console.log(titleStepOne);
+        //check my child's name is here
+        expect(titleStepOne).toContain("Kira");
     })
 })
