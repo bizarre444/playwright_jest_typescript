@@ -34,20 +34,16 @@ export class WorksheetActions extends BasePage {
     }
 
     async getRandomSlug() {
-        let slug = 'lalala';
+        let allSlugs: any = await this.getAllWorksheets();
+        let countSlugs: number = await allSlugs.length;
+        let slug: string = allSlugs[Math.floor(Math.random()*countSlugs)];
         return slug;
     }
 
     async getAllWorksheets() {
-        //let arrayWork = await this.allWorksheets.allTextContents();
-        // let el_attrs = await this.allWorksheets.evaluate("el => el.getAttributeNames()")
-        // console.log(el_attrs);
-
-        //const href = await this.worksheetpage.$eval('#worksheets .activity-item', (el) => el.getAttribute('data-slug'))
-        //console.log(href);
-
         const arraySlug: any = await this.worksheetpage.evaluate(() => Array.from(document.querySelectorAll('#worksheets .activity-item')).map(el => el.getAttribute('data-slug')));
-        console.log(arraySlug);
+        //console.log(arraySlug);
+        return arraySlug;
     }
 
 }

@@ -44,8 +44,8 @@ test.describe('Tests for logged user', () => {
         
         let slug: string = await worksheetpage.getRandomSlug();
         //await worksheetpage.hoverCart(slug);
-        await worksheetpage.getAllWorksheets();
-        //console.log(array);
+        //await worksheetpage.getAllWorksheets();
+        console.log(slug);
         
         //await worksheetpage.pause();
     })
