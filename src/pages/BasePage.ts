@@ -42,5 +42,5 @@ export class BasePage {
     async pause() {
         await this.page.pause();
     }
-   
+
 }
