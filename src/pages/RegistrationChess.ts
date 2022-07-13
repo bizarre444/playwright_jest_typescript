@@ -12,11 +12,6 @@ export class RegistrationChess extends BasePage {
     readonly grade: Locator;
     readonly nextbtn: Locator;
     readonly questone: string;
-    readonly goodanswer: Locator;
-    readonly next2btn: Locator;
-    readonly good2answer: Locator;
-    readonly next3btn: Locator;
-    readonly  success: string;
 
     constructor(page: Page) {
         super(page);
@@ -30,12 +25,6 @@ export class RegistrationChess extends BasePage {
         this.grade = page.locator('text="Grade K"');
         this.nextbtn = page.locator('[data-selector="sign-up-chess-go-to-chess-level-step"]');
         this.questone = ('[data-selector="chess-level-question-step-1"]');
-        //need fix!!! -> goodanswer
-        this.goodanswer = page.locator('input[id="good-level"]');
-        this.next2btn = page.locator('[data-selector="chess-question-1-step-next-btn"]');
-        this.good2answer = page.locator('[id="know-knight"]');
-        this.next3btn = page.locator('[data-selector="chess-question-2-step-next-btn"]');
-        this.success = '[data-selector="chess-last-step-good-text"]';
     }
 
     async chessFlowFirst() {
@@ -55,17 +44,4 @@ export class RegistrationChess extends BasePage {
         await this.nextbtn.click();
         await this.page.waitForSelector(this.questone);
     }
-
-    async chessFlowThird() {
-        await this.goodanswer.click();
-        await this.page.waitForTimeout(1000);
-        await this.next2btn.click();
-        await this.page.waitForNavigation();
-        await this.good2answer.click();
-        await this.page.waitForTimeout(1000);
-        await this.next3btn.click();
-        await this.page.waitForSelector(this.success);
-    }
-
-    
 }
