@@ -17,7 +17,7 @@ test.beforeAll(async ({browser}) => {
 
     const apiContext = await request.newContext();
     let apiUtils_new = new APIUtils(apiContext, loginPayLoad)
-    //let response = await apiUtils_new.loginByApi();
+    let response = await apiUtils_new.loginByApi();
     //console.log(response);
     webContext = await browser.newContext({ storageState: './state/state.json'});
 });
@@ -41,13 +41,12 @@ test.describe('Tests for logged user', () => {
         let worksheetpage = new WorksheetActions(await webContext.newPage());
     
         await worksheetpage.open(url + path);
-        
-        let slug: string = await worksheetpage.getRandomSlug();
-        //await worksheetpage.hoverCart(slug);
-        //await worksheetpage.getAllWorksheets();
-        console.log(slug);
-        
-        //await worksheetpage.pause();
+
+        await worksheetpage.clickFavorite();
+        await worksheetpage.clickDone();
+        await worksheetpage.clickDownload();
+
+        //i need expect
     })
 })
 
