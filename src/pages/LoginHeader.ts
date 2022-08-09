@@ -11,7 +11,7 @@ export class LoginHeader extends BasePage {
     constructor(page: Page) {
         super(page);
         this.loginpage = page;
-        this.openPopup = page.locator('#bs-example-navbar-collapse-1 > ul > li.account-menu._bottom > div > button'),
+        this.openPopup = page.locator('(//button[@type="button"][normalize-space()="Log in"])[2]'),
         this.emailTag = page.locator('#family > form > div:nth-child(2) > input');
         this.passwordTag = page.locator('#family > form > div:nth-child(3) > input');
         this.nextButton = page.locator('#family > form > div.login__submit-container.text-center > button');

@@ -3,7 +3,7 @@ import {test, expect, request } from "@playwright/test";
 const loginPayLoad = { "username": "qa.parent2021@gmail.com", "password": "123456QA" };
 
 //login
-test('Login by API', async () => {
+test('@API Login by API', async () => {
 
     const apiContext = await request.newContext();
     const loginResponse = await apiContext.post("https://www.ka-stage.ml/api/v2/user/login/",

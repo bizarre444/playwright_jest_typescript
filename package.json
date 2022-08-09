@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "npx playwright test",
+        "regression": "npx playwright test",
+        "api": "npx playwright test --grep  @API",
         "test-jest": "jest --detectOpenHandles",
         "test.watch": "jest --watchAll",
         "generate-report": "allure generate ./allure-results -o allure-report --clean",
@@ -15,7 +16,7 @@
         "url": "git+https://github.com/bizarre444/playwright_jest_typescript.git"
     },
     "keywords": [],
-    "author": "",
+    "author": "Bizarre Olya",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/bizarre444/playwright_jest_typescript/issues"
