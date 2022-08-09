@@ -42,5 +42,8 @@ export class BasePage {
     async pause() {
         await this.page.pause();
     }
+    async timeout(time: number) {
+        await this.page.waitForTimeout(time);
+    }
 
 }

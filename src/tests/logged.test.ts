@@ -45,7 +45,6 @@ test.describe('Tests for logged user', () => {
         await worksheetpage.clickFavorite();
         await worksheetpage.clickDone();
         await worksheetpage.clickDownload();
-
         //i need expect
     })
 })

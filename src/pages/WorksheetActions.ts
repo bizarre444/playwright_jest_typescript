@@ -4,11 +4,13 @@ import { Locator, Page } from "playwright";
 export class WorksheetActions extends BasePage {
     readonly worksheetpage: Page;
     readonly allWorksheets: Locator;
+    readonly popup: string;
 
     constructor(page: Page) {
         super(page);
         this.worksheetpage = page;
         this.allWorksheets = page.locator('.activity-item');
+        this.popup = ".website-account-type-modal__subtitle";
     }
 
     async hoverCart(arg: string) {
@@ -43,7 +45,7 @@ export class WorksheetActions extends BasePage {
         let allSlugs: any = await this.getAllWorksheets();
         let countSlugs: number = await allSlugs.length;
         let slug: string = await allSlugs[Math.floor(Math.random()*countSlugs)];
-        console.log(slug);
+        //console.log(slug);
         return slug;
     }
 
@@ -54,19 +56,19 @@ export class WorksheetActions extends BasePage {
 
     async getFavoriteLocator(slug: string) {
         let favLocator: string = '[data-slug="' + slug + '"] >> [data-selector="learning-resources-mark-favorite"]';
-        console.log(favLocator);
+        //console.log(favLocator);
         return favLocator;
     }
 
     async getDoneLocator(slug: string) {
         let doneLocator: string = '[data-slug="' + slug + '"] >> [data-selector="learning-resources-mark-done"]';
-        console.log(doneLocator);
+        //console.log(doneLocator);
         return doneLocator;
     }
 
     async getDownloadLocator(slug: string) {
         let downloadLocator: string = '[data-slug="' + slug + '"] >> [data-selector="learning-resources-download"]';
-        console.log(downloadLocator);
+        //console.log(downloadLocator);
         return downloadLocator;
     }
 
@@ -74,5 +76,4 @@ export class WorksheetActions extends BasePage {
         let locator: string = '[data-slug="' + slug + '"]';
         return locator;
     }
-    
 }

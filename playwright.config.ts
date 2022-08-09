@@ -19,6 +19,7 @@ const config: PlaywrightTestConfig = {
     detail: true,
     suitTitle: false
   }]],
+  
 };
 
 export default config;
