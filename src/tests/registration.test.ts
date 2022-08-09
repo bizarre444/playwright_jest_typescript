@@ -34,7 +34,7 @@ test.describe('Registration test', () => {
         expect(regUrl).toContain(subUrl);
     })
 
-    test.only('Registration from Chess course', async({ page }) => {
+    test('Registration from Chess course', async({ page }) => {
         homepage = new RegistrationChess(page);
         await homepage.open(url + path);
         await homepage.chessFlowFirst();

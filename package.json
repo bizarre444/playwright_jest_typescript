@@ -4,10 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "playwright test",
+        "test": "npx playwright test",
         "test-jest": "jest --detectOpenHandles",
         "test.watch": "jest --watchAll",
-        "test-report": "playwright test --headed --reporter=html"
+        "generate-report": "allure generate ./allure-results -o allure-report --clean",
+        "open-report": "allure open allure-report"
     },
     "repository": {
         "type": "git",
@@ -21,8 +22,9 @@
     },
     "homepage": "https://github.com/bizarre444/playwright_jest_typescript#readme",
     "devDependencies": {
-        "@playwright/test": "^1.22.0",
+        "@playwright/test": "^1.24.2",
         "@types/jest": "^27.4.1",
+        "allure-playwright": "^2.0.0-beta.18",
         "expect-playwright": "^0.7.2",
         "jest": "^27.5.1",
         "jest-html-reporters": "^3.0.5",

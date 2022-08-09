@@ -3,3 +3,5 @@ node_modules
 /reports
 /playwright-report
 /state
+/allure-report
+/allure-results

@@ -37,7 +37,7 @@ test.describe('Tests for logged user', () => {
         //await homepage.pause();
     });
 
-    test.only('Logged user do not see registration popup', async() => {
+    test('Logged user do not see registration popup', async() => {
         let worksheetpage = new WorksheetActions(await webContext.newPage());
     
         await worksheetpage.open(url + path);
