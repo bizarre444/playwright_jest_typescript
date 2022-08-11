@@ -6,10 +6,8 @@ Plus reporter
 npm i
 
 # run tests
-npm run test
-npm run test --headed
-npm run test --reporter=html
-
-    To open last HTML report run:
-    npx playwright show-report
-
+npm run regression
+npm run api
+# Allure report
+npm run generate-report
+npm run open-report

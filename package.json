@@ -6,8 +6,6 @@
     "scripts": {
         "regression": "npx playwright test",
         "api": "npx playwright test --grep  @API",
-        "test-jest": "jest --detectOpenHandles",
-        "test.watch": "jest --watchAll",
         "generate-report": "allure generate ./allure-results -o allure-report --clean",
         "open-report": "allure open allure-report"
     },

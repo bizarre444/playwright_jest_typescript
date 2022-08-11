@@ -8,8 +8,6 @@ const config: PlaywrightTestConfig = {
   expect: {
     timeout: 5000
   },
-
-  
   reporter: [
     ['line'],
     ['allure-playwright', {
@@ -23,7 +21,7 @@ const config: PlaywrightTestConfig = {
       headless: false,
       screenshot: "only-on-failure",
       video: 'retain-on-failure',
-    }, {
+    }}, {
     name:'safari',
     use: {
       browserName: 'webkit',
