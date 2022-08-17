@@ -41,6 +41,12 @@ module.exports = {
                 title_tag: '[data-selector="lessons-title-default"]'
             }
         },
+        filters: {
+            kindergarten: {
+                selector: '.learning-resources-description-left-text',
+                text: "Our free worksheets for kids are designed to keep toddlers busy with learning. The printable worksheets are a perfect learning tool for children to brush up on their reading, writing, and math skills. Chess enthusiasts will enjoy running through the simple chess exercises in the preschool worksheets for kids, while children who enjoy nature and problem solving will get a kick out of the enjoyable exercises. With these toddler worksheets, you can be sure that your kids put their time to good use; learning and having fun.",
+            }
+        },
         blogPage: {
             path: "storytime/",
             title: "Blog",
