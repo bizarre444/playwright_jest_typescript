@@ -18,8 +18,41 @@ export class WorksheetFilter extends BasePage {
         await this.kinderGrade.click();
     }
 
-    async openWorksheetPage() {
-        //TODO
+    async getRandomId() {
+        let allIDs: any = await this.getAllWorksheets();
+        let countIDs: number = await allIDs.length;
+        let id: string = await allIDs[Math.floor(Math.random()*countIDs)];
+        //console.log(id);
+        return id;
+    }
+
+    async getAllWorksheets() {
+        const arrayID: any = await this.worksheetpage.evaluate(() => Array.from(document.querySelectorAll('#worksheets .activity-item')).map(el => el.getAttribute('data-id')));
+        //console.log(arrayID);
+        return arrayID;
+    }
+
+    async getLocator(id: string) {
+        let locator: string = '[data-id="' + id + '"]';
+        //console.log(locator);
+        return locator;
+    }
+
+    async clickCard() {
+        let id = await this.getRandomId();
+        let locatorID = await this.getLocator(id);
+        await this.hoverCart(locatorID);
+        await this.worksheetpage.locator(locatorID).click();
+    }
+
+    async hoverCart(arg: string) {
+        await this.worksheetpage.locator(arg).hover();
+    }
+
+    async getFirstTag() {
+        const tag = await this.worksheetpage.locator(".learning-activity__tags-item").first().innerText();
+        // console.log(tag);
+        return tag;
     }
     
 }

@@ -21,17 +21,26 @@ test.afterAll(async () => {
     console.log('After page tests');
 });
 
-test.describe('Check page url and title', () => {
+test.describe('Check filters', () => {
     
-    test('Learning page kindergarten grade test', async( {page} ) => {
+    test('Learning page kindergarten grade test is correct filter on worksheet list', async( {page} ) => {
         const learningpage = new WorksheetFilter(page);
         //choose Kindergarten filter
         await learningpage.chooseKinderGrade();
         let title = await learningpage.getInnerText(filters.kindergarten.selector);
         expect(title).toBe(filters.kindergarten.text);
-        //TODO - open random filtered page - check that grade equal "Kindergarten"
     });
 
+    test('Learning page kindergarten grade test is correct filter on different page', async( {page} ) => {
+        const learningpage = new WorksheetFilter(page);
+        await learningpage.chooseKinderGrade();
+        await learningpage.timeout(5000);
+        await learningpage.clickCard();
+        let urlWork = await learningpage.getUrl();
+        expect(urlWork).toContain(filters.kindergarten.urlOne);
+        let tag = await learningpage.getFirstTag();
+        expect(tag).toBe(filters.kindergarten.name);
+    });
 
 });
 
