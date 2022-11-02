@@ -6,7 +6,7 @@ const loginPayLoad = { "username": "qa.parent2021@gmail.com", "password": "12345
 test('@API Login by API', async () => {
 
     const apiContext = await request.newContext();
-    const loginResponse = await apiContext.post("https://www.ka-stage.ml/api/v2/user/login/",
+    const loginResponse = await apiContext.post("https://www.ka-stage.tk/api/v2/user/login/",
         {data: loginPayLoad});
     const loginResponseJson = await loginResponse.json();
     console.log(loginResponseJson);

@@ -1,5 +1,5 @@
 module.exports = {
-    url: 'https://www.ka-stage.ml/',
+    url: 'https://www.ka-stage.tk/',
     subUrl: 'subscription-plans/',
     selectors: {
         parentPage: {
@@ -45,7 +45,7 @@ module.exports = {
             kindergarten: {
                 selector: '.learning-resources-description-left-text',
                 text: "Our free worksheets for kids are designed to keep toddlers busy with learning. The printable worksheets are a perfect learning tool for children to brush up on their reading, writing, and math skills. Chess enthusiasts will enjoy running through the simple chess exercises in the preschool worksheets for kids, while children who enjoy nature and problem solving will get a kick out of the enjoyable exercises. With these toddler worksheets, you can be sure that your kids put their time to good use; learning and having fun.",
-                urlOne: 'https://www.ka-stage.ml/printables/',
+                urlOne: 'https://www.ka-stage.tk/printables/',
                 name: 'Kindergarten'
             }
         },
@@ -65,7 +65,7 @@ module.exports = {
             email: "qa.parent2021@gmail.com",
             password: "123456QA",
             modal: '#logInModal > div > div > div.modal-header.text-center.custom-modal__header > div',
-            successUrl: 'https://www.ka-stage.ml/account-settings/#report',
+            successUrl: 'https://www.ka-stage.tk/account-settings/#report',
             errorTag: '#family > form > div.alert.alert-danger.error-alert',
             message: 'Email or password is invalid',
             success: '.page-title'
