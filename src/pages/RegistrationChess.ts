@@ -21,7 +21,7 @@ export class RegistrationChess extends BasePage {
         this.parentbtn = page.locator('[data-selector="sign-up-chess-parent-btn"]');
         this.firsttext = '.sign-up-chess__quote-text';
         this.nameInput = page.locator('.sign-up-chess__name-input');
-        this.avatar = page.locator('[data-src="https://static.ka-stage.ml/images/kid-profile-create-page/avatars/child_avatar_6.svg"]');
+        this.avatar = page.locator('[data-src="https://static.ka-stage.tk/images/kid-profile-create-page/avatars/child_avatar_6.svg"]');
         this.grade = page.locator('text="Grade K"');
         this.nextbtn = page.locator('[data-selector="sign-up-chess-go-to-chess-level-step"]');
         this.questone = ('[data-selector="chess-level-question-step-1"]');
