@@ -1,5 +1,5 @@
 module.exports = {
-    url: 'https://www.ka-stage.tk/',
+    url: 'https://www.kad-staging-mobi.net/',
     subUrl: 'subscription-plans/',
     selectors: {
         parentPage: {

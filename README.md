@@ -6,6 +6,7 @@ Plus reporter
 npm i
 
 # run tests
+npx playwright test
 npm run regression
 npm run api
 # Allure report

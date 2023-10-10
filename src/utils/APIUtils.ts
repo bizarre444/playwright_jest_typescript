@@ -10,7 +10,7 @@ class APIUtils {
     }
 
     async loginByApi() {
-        const loginResponse = await this.apiContext.post("https://www.ka-stage.tk/api/v2/user/login/", { data: this.loginPayLoad });
+        const loginResponse = await this.apiContext.post("https://www.kad-staging-mobi.net/api/v2/user/login/", { data: this.loginPayLoad });
         const loginResponseJson = await loginResponse.json();
         await this.apiContext.storageState({ path: './state/state.json'});
         return loginResponseJson;
